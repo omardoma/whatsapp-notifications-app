@@ -15,4 +15,4 @@ An Express.js microservice for Sockets functionality of a Whatsapp clone.
 2. npm install
 3. npm start
 
-&#9400; Omar Doma 2018
+&#9400; 200Ok 2018
