@@ -1,12 +1,11 @@
 version: '3'
 services:
   app:
-    build: .
     image: omardoma/whatsapp-notifications-app:v1
     ports:
-     - "3000:3000"
+      - "3000:3000"
     volumes:
-     - .:/app
+      - .:/app
     deploy:
       replicas: 5
       restart_policy:
@@ -16,9 +15,9 @@ services:
           cpus: "0.1"
           memory: 50M
     networks:
-     - webnet
-    depends_on:
-     - redis
+      - webnet
+    depends_on: 
+      - redis
 
   visualizer:
     image: dockersamples/visualizer:stable
@@ -37,13 +36,13 @@ services:
     ports:
       - "6379:6379"
     volumes:
-      - "/home/docker/data:/data"
+      - "/Users/omardoma/docker/data:/data"
     deploy:
       placement:
         constraints: [node.role == manager]
     command: redis-server --appendonly yes
     networks:
-     - webnet
+      - webnet
 
 networks:
   webnet:
