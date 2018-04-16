@@ -8,6 +8,7 @@ An Express.js microservice for Sockets functionality of a Whatsapp clone.
 * Express.js v4
 * Socket.io v2+
 * Redis
+* Docker
 
 #### How to run?
 
