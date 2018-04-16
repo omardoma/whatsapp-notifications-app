@@ -1,0 +1,20 @@
+version: '3'
+services:
+  app:
+    build: .
+    image: whatsapp-notifications-app:v1
+    ports:
+     - "3000:3000"
+    volumes:
+     - .:/app
+    networks:
+     - net
+    depends_on:
+     - redis
+  redis:
+    image: "redis"
+    networks:
+     - net
+
+networks:
+  net:
