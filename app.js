@@ -13,5 +13,8 @@ app.use(
   })
 );
 app.use(helmet());
+app.use((req, res) => {
+  res.send(404, 'This is a Socket.io real-time server, no HTTP routes are defined.');
+});
 
 module.exports = app;

@@ -16,13 +16,13 @@ RUN npm i -g pm2 --quiet
 ## Add application code
 COPY . /app
 
+## Allows port 3000 to be publicly available
+EXPOSE 3000
+
 ## Set environment variables
 ENV NODE_ENV production
 ENV REDIS_HOST redis
 ENV REDIS_PORT 6379
-
-## Allows port 3000 to be publicly available
-EXPOSE 3000
 
 ## The command uses pm2 to run the application
 # CMD ["npm", "start"]
