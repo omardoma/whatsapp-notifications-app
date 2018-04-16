@@ -2,7 +2,7 @@ version: '3'
 services:
   app:
     build: .
-    image: whatsapp-notifications-app:v1
+    image: omardoma/whatsapp-notifications-app:v1
     ports:
      - "3000:3000"
     volumes:
@@ -16,7 +16,7 @@ services:
           cpus: "0.1"
           memory: 50M
     networks:
-     - net
+     - webnet
     depends_on:
      - redis
 
@@ -30,7 +30,7 @@ services:
       placement:
         constraints: [node.role == manager]
     networks:
-      - net
+      - webnet
 
   redis:
     image: "redis"
@@ -43,7 +43,7 @@ services:
         constraints: [node.role == manager]
     command: redis-server --appendonly yes
     networks:
-     - net
+     - webnet
 
 networks:
-  net:
+  webnet:

@@ -1,0 +1,26 @@
+config:
+  target: "http://localhost:3000"
+  phases:
+    - duration: 300
+      arrivalRate: 50
+scenarios:
+  - name: "Join"
+    engine: "socketio"
+    flow:
+      - loop:
+        - emit:
+            channel: "join"
+            data: {
+              room: "room1"
+            }
+        - emit:
+            channel: "join"
+            data: {
+              room: "room2"
+            }
+        - emit:
+            channel: "notification"
+            data: {
+              room: "room1",
+              msg: "Hii"
+            }

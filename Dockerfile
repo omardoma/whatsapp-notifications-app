@@ -24,6 +24,6 @@ ENV NODE_ENV production
 ENV REDIS_HOST redis
 ENV REDIS_PORT 6379
 
-## The command uses pm2 to run the application
-# CMD ["npm", "start"]
+## The command uses pm2 or node to run the application
+# CMD ["node", "./bin/www"]
 CMD ["pm2-docker", "start", "./bin/www"]
