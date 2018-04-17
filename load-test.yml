@@ -2,12 +2,10 @@ config:
   target: "http://localhost:3000"
   phases:
     - duration: 300
-      arrivalRate: 50
+      arrivalRate: 5
 scenarios:
-  - name: "Join"
-    engine: "socketio"
-    flow:
-      - loop:
+    - engine: "socketio"
+      flow:
         - emit:
             channel: "join"
             data: {
@@ -23,4 +21,10 @@ scenarios:
             data: {
               room: "room1",
               msg: "Hii"
+            }
+        - emit:
+            channel: "notification"
+            data: {
+              room: "room2",
+              msg: "Hello"
             }
