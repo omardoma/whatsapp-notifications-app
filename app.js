@@ -7,14 +7,14 @@ const express = require('express'),
 app.use(logger(process.env.NODE_ENV === 'production' ? 'combined' : 'dev'));
 app.use(
   cors({
-    origin: true,
-    credentials: true,
-    methods: ['GET', 'POST', 'PATCH', 'DELETE']
+    origin: true
   })
 );
 app.use(helmet());
 app.use((req, res) => {
-  res.status(404).send('This is a Socket.io real-time server, no HTTP routes are defined.');
+  res
+    .status(404)
+    .send('This is a Socket.io real-time server, no HTTP routes are defined.');
 });
 
 module.exports = app;
