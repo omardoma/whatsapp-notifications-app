@@ -15,9 +15,21 @@ io.on('connection', socket => {
     io.of('/').adapter.clientRooms(socket.id, (err, rooms) => {
       if (!err) {
         rooms.forEach(room => {
-          socket.to(room).emit('notification', notification);
+          socket.(rotoom).emit('notification', notification);
         });
       }
+    });
+
+    socket.on('message', msg => {
+      io.of('/').adapter.clientRooms(socket.id, (err, rooms) => {
+        if (!err) {
+          rooms.forEach(room => {
+            if (room === msg.room) {
+              socket.to(room).emit('message', msg);
+            }
+          });
+        }
+      });
     });
   });
 });
