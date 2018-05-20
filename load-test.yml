@@ -17,13 +17,13 @@ scenarios:
               room: "room2"
             }
         - emit:
-            channel: "notification"
+            channel: "message"
             data: {
               room: "room1",
               msg: "Hii"
             }
         - emit:
-            channel: "notification"
+            channel: "message"
             data: {
               room: "room2",
               msg: "Hello"

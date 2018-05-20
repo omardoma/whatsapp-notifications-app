@@ -6,30 +6,30 @@ services:
       - "3000:3000"
     volumes:
       - .:/app
-    # deploy:
-    #   replicas: 5
-    #   restart_policy:
-    #     condition: on-failure
-    #   resources:
-    #     limits:
-    #       cpus: "0.1"
-    #       memory: 50M
+    deploy:
+      replicas: 5
+      restart_policy:
+        condition: on-failure
+      resources:
+        limits:
+          cpus: "0.1"
+          memory: 50M
     networks:
       - webnet
     depends_on: 
       - redis
 
-  # visualizer:
-  #   image: dockersamples/visualizer:stable
-  #   ports:
-  #     - "8080:8080"
-  #   volumes:
-  #     - "/var/run/docker.sock:/var/run/docker.sock"
-  #   deploy:
-  #     placement:
-  #       constraints: [node.role == manager]
-  #   networks:
-  #     - webnet
+  visualizer:
+    image: dockersamples/visualizer:stable
+    ports:
+      - "8080:8080"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+    networks:
+      - webnet
 
   redis:
     image: "redis"
