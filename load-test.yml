@@ -25,6 +25,23 @@ scenarios:
         - emit:
             channel: "message"
             data: {
+              room: "room1",
+              msg: "Hello"
+            }
+        - emit:
+            channel: "message"
+            data: {
+              room: "room2",
+              msg: "Hii"
+            }
+        - emit:
+            channel: "message"
+            data: {
               room: "room2",
               msg: "Hello"
+            }
+        - emit:
+            channel: "notification"
+            data: {
+              msg: "Changed Profile Pic"
             }

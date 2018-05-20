@@ -1,6 +1,6 @@
-const io = require('socket.io')(),
-  redisAdapter = require('socket.io-redis'),
-  config = require('./config');
+const io = require('socket.io')();
+const redisAdapter = require('socket.io-redis');
+const config = require('./config');
 
 io.adapter(redisAdapter({ host: config.REDIS_HOST, port: config.REDIS_PORT }));
 

@@ -1,8 +1,9 @@
-const express = require('express'),
-  logger = require('morgan'),
-  cors = require('cors'),
-  helmet = require('helmet'),
-  app = express();
+const express = require('express');
+const logger = require('morgan');
+const cors = require('cors');
+const helmet = require('helmet');
+  
+const app = express();
 
 app.use(logger(process.env.NODE_ENV === 'production' ? 'combined' : 'dev'));
 app.use(
