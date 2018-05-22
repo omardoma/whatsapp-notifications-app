@@ -81,4 +81,4 @@ server.on('error', onError);
 server.on('listening', onListening);
 
 // Socket.io Logic
-require('../api/v1/Socket.io').attach(server);
+require('../api/v1/socket.io').attach(server);

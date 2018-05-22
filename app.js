@@ -2,14 +2,14 @@ const express = require('express');
 const logger = require('morgan');
 const cors = require('cors');
 const helmet = require('helmet');
-  
+
 const app = express();
 
 app.use(logger(process.env.NODE_ENV === 'production' ? 'combined' : 'dev'));
 app.use(
   cors({
-    origin: true
-  })
+    origin: true,
+  }),
 );
 app.use(helmet());
 app.use((req, res) => {

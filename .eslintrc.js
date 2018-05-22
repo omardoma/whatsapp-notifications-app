@@ -1,19 +1,19 @@
 module.exports = {
-  env: {
-    es6: true,
-    node: true
-  },
-  extends: 'eslint:recommended',
-  parserOptions: {
-    sourceType: 'module',
-    ecmaVersion: 2017
-  },
+  extends: ['airbnb-base'],
+  // plugins: ['prettier'],
   rules: {
-    'no-dupe-keys': 0,
-    'no-console': 0,
-    indent: ['error', 2, { SwitchCase: 1 }],
-    'linebreak-style': ['error', 'unix'],
-    quotes: ['error', 'single'],
-    semi: ['error', 'always']
+    // 'prettier/prettier': [
+    //   'error',
+    //   {
+    //     singleQuote: true,
+    //     trailingComma: 'all'
+    //   }
+    // ],
+    'consistent-return': 0,
+    'no-shadow': 0,
+    'no-underscore-dangle': 0,
+    'function-paren-newline': 0,
+    'import/no-dynamic-require': 0,
+    'eqeqeq': 0
   }
 };
